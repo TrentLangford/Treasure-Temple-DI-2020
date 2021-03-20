@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class LavaComponent : MonoBehaviour
 {
+    // A small class responible for the flaming gorge components.
     public bool isActive;
     public GameObject[] actives;
+    // respawns the player if it enters its collision box. Sadly, because of a lack of time, the collision boxes were removed
+    // so that you could actually make it through the flaming gorge
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Collider2D>().CompareTag("Player")) SceneManager.LoadScene(SceneManager.GetActiveScene().name);

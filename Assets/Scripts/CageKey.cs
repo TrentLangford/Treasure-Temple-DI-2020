@@ -8,6 +8,7 @@ public class CageKey : Interactable
     public Rigidbody2D thisRb;
     Vector2 newPos;
 
+    // All interactables must implement this method.
     public void TriggerOnInteractMethod(PlayerScript ps)
     {
         OnInteractWith(ps);
@@ -15,6 +16,7 @@ public class CageKey : Interactable
 
     public override void OnInteractWith(PlayerScript ps)
     {
+        // Standard interactable code. adds this item to your inventory if there is an open slot.
         for (int i = 0; i < ps.inventorySize; i++)
         {
             if (ps.isFull[i] == false)
@@ -29,11 +31,14 @@ public class CageKey : Interactable
         //base.OnInteractWith(ps);
     }
 
+    // whenever the grabber "selects" this cage key, set the did get selected variable to true and
+    // set our desired position to the player's position plus 1 unit right.
     public void Select(PlayerScript ps)
     {
         didGetSelected = true;
         newPos = new Vector2(ps.transform.position.x, ps.transform.position.y) + Vector2.right;
     }
+    // if we were selected, move this object towards our desired position.
     void Update()
     {
         if (didGetSelected)

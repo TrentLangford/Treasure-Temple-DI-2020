@@ -5,6 +5,7 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    // A pretty standard UI manager class that went unused due to some quirks and a lack of time.
     public static UIManager instance;
     public TMP_Text interactionText;
     public bool isAlreadyActive;

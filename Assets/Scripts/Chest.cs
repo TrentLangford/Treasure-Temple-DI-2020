@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Chest : Interactable
 {
+    // A small class responsible for spawning in quest items when a character has a key
     public int id;
     public GameObject newItem;
+
+    // All interactables must implement this method.
     public void TriggerOnInteractMethod(PlayerScript ps)
     {
         OnInteractWith(ps);
     }
     public override void OnInteractWith(PlayerScript ps)
     {
+        // Checks if a player has the correct key in their inventory and spawns in the quest item if they do
         int i = 0;
         foreach (GameObject pKey in ps.inventory)
         {

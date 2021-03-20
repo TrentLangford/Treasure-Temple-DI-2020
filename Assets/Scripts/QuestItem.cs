@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class QuestItem : Interactable
 {
+    // The interactable class for all the quest items.
+
+    // an id is required to identify the quest items.
     public int id;
+
+    // All interactables must implement this method.
     public void TriggerOnInteractMethod(PlayerScript ps)
     {
         OnInteractWith(ps);
     }
     public override void OnInteractWith(PlayerScript ps)
     {
+        // Standard interactable code, adds the item to your inventory if there is an available space.
         for (int i = 0; i < ps.inventorySize; i++)
         {
             if (ps.isFull[i] == false)

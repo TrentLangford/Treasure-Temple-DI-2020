@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Key : Interactable
 {
+    // The class for keys used to open quest item chests.
     public int id;
+    // All interactables must implement this method.
     public void TriggerOnInteractMethod(PlayerScript ps)
     {
         OnInteractWith(ps);
@@ -12,6 +14,7 @@ public class Key : Interactable
 
     public override void OnInteractWith(PlayerScript ps)
     {
+        // Standard interactable code. adds this item to your inventory if there is an available slot
         for (int i = 0; i < ps.inventorySize; i++)
         {
             if (ps.isFull[i] == false)

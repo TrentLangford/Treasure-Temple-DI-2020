@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossDetector : MonoBehaviour
 {
+    // an unused class that would detect players within its collision box
     public Boss boss;
     private void OnTriggerEnter2D(Collider2D collision)
     {

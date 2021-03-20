@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    // A cut class for a projectile that would respawn the character when they hit it. the class just moves the projectile to the right by a steady speed
     public float speed;
     private void FixedUpdate()
     {

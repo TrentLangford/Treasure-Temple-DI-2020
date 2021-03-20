@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    // An unused class that spawned projectiles in at a regular rate and destroyed them after 5 seconds.
     public GameObject projectile;
     public float fireRate;
     private float timeBtwShots;
